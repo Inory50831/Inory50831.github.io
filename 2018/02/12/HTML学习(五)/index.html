@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/libe/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/libe/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="HTML," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="HTML 框架通过使用框架，可以再同一个浏览器窗口中显示不止一个页面。每份HTML文档称为一个框架，并且每个框架都独立于其他的框架。 框架标签&amp;lt;frame&amp;gt;标签定义了放置在每个框架中的 HTML 文档。框架结构标签&amp;lt;frameset&amp;gt;定义如何将窗口分割为框架。每个&amp;lt;frameset&amp;gt;定义了一系列行或列。在下述实例中，我们设置了一个两列的框架集(frameset)">
+<meta name="keywords" content="HTML">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML学习(五)">
+<meta property="og:url" content="https://inory50831.github.io/2018/02/12/HTML学习(五)/index.html">
+<meta property="og:site_name" content="Iworld">
+<meta property="og:description" content="HTML 框架通过使用框架，可以再同一个浏览器窗口中显示不止一个页面。每份HTML文档称为一个框架，并且每个框架都独立于其他的框架。 框架标签&amp;lt;frame&amp;gt;标签定义了放置在每个框架中的 HTML 文档。框架结构标签&amp;lt;frameset&amp;gt;定义如何将窗口分割为框架。每个&amp;lt;frameset&amp;gt;定义了一系列行或列。在下述实例中，我们设置了一个两列的框架集(frameset)">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-02-12T04:06:56.626Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTML学习(五)">
+<meta name="twitter:description" content="HTML 框架通过使用框架，可以再同一个浏览器窗口中显示不止一个页面。每份HTML文档称为一个框架，并且每个框架都独立于其他的框架。 框架标签&amp;lt;frame&amp;gt;标签定义了放置在每个框架中的 HTML 文档。框架结构标签&amp;lt;frameset&amp;gt;定义如何将窗口分割为框架。每个&amp;lt;frameset&amp;gt;定义了一系列行或列。在下述实例中，我们设置了一个两列的框架集(frameset)">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://inory50831.github.io/2018/02/12/HTML学习(五)/"/>
+
+
+
+
+
+  <title>HTML学习(五) | Iworld</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?15ceb2f5458a321f26b539fb1240ecaf";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Iworld</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">只会嘤嘤嘤的萌新(滑稽)</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://inory50831.github.io/2018/02/12/HTML学习(五)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Inory">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Iworld">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">HTML学习(五)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-12T10:09:04+08:00">
+                2018-02-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,946
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  8
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="HTML-框架"><a href="#HTML-框架" class="headerlink" title="HTML 框架"></a>HTML 框架</h1><p>通过使用框架，可以再同一个浏览器窗口中显示不止一个页面。<br>每份HTML文档称为一个框架，并且每个框架都独立于其他的框架。</p>
+<h2 id="框架标签"><a href="#框架标签" class="headerlink" title="框架标签"></a>框架标签</h2><p><code>&lt;frame&gt;</code>标签定义了放置在每个框架中的 HTML 文档。<br>框架结构标签<code>&lt;frameset&gt;</code>定义如何将窗口分割为框架。每个<code>&lt;frameset&gt;</code>定义了一系列行或列。<br>在下述实例中，我们设置了一个两列的框架集(frameset)。第一列被设置为占浏览器窗口的 25%。第二列被设置为占浏览器窗口的 75%。<br><a id="more"></a></p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">frameset</span> <span class="attr">cols</span>=<span class="string">"25%,75%"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">frame</span> <span class="attr">src</span>=<span class="string">"frame_a.html"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">frame</span> <span class="attr">src</span>=<span class="string">"frame_b.html"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">frameset</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>ps</strong>: 假如一个框架有可见边框，用户可以拖动边框来改变它的大小。为了避免这种情况发生，可以在<code>&lt;frame&gt;</code>标签中加入<code>noresize=&quot;noresize&quot;</code>。</p>
+<h2 id="混合框架"><a href="#混合框架" class="headerlink" title="混合框架"></a>混合框架</h2><p><code>&lt;frameset&gt;</code>标签中的<code>rows</code>和<code>columns</code>值规定了每行或每列占屏幕的面积。</p>
+<h3 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">frameset</span> <span class="attr">rows</span>=<span class="string">"50%,50%"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">frameset</span> <span class="attr">src</span>=<span class="string">"frame_c.html"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">frameset</span> <span class="attr">cols</span>=<span class="string">"40%,60%"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">frameset</span> <span class="attr">src</span>=<span class="string">"frame_d.html"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">frameset</span> <span class="attr">src</span>=<span class="string">"frame_e.html"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">frameset</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">frameset</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="导航框架"><a href="#导航框架" class="headerlink" title="导航框架"></a>导航框架</h2><p>导航框架包含一个将第二个框架作为目标的链接列表。  </p>
+<h3 id="实例-2"><a href="#实例-2" class="headerlink" title="实例"></a>实例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">frameset</span> <span class="attr">cols</span>=<span class="string">"200,*"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">frame</span> <span class="attr">src</span>=<span class="string">"frame_contents.html"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">frame</span> <span class="attr">src</span>=<span class="string">"frame_f.html"</span> <span class="attr">name</span>=<span class="string">"showframe"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">frameset</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="内联框架"><a href="#内联框架" class="headerlink" title="内联框架"></a>内联框架</h2><p><strong><code>iframe</code>用于在网页内显示网页</strong>  </p>
+<h3 id="iframe-添加"><a href="#iframe-添加" class="headerlink" title="iframe 添加"></a>iframe 添加</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"URL"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="iframe-边界"><a href="#iframe-边界" class="headerlink" title="iframe 边界"></a>iframe 边界</h3><p><code>height</code>和<code>width</code>属性用于规定<code>iframe</code>的高度和宽度。属性值的默认单位是像素，但也可用百分比来设定(如 “50%”)。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"iframe_a.html"</span> <span class="attr">height</span>=<span class="string">"333"</span> <span class="attr">width</span>=<span class="string">"333"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="iframe-边框"><a href="#iframe-边框" class="headerlink" title="iframe 边框"></a>iframe 边框</h3><p><code>frameborder</code>属性规定是否显示<code>iframe</code>周围的边框，属性值设置为”0”即可移除边框。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"iframe_b.html"</span> <span class="attr">frameborder</span>=<span class="string">"0"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="HTML-背景"><a href="#HTML-背景" class="headerlink" title="HTML 背景"></a>HTML 背景</h1><p><code>&lt;body&gt;</code>拥有两个配置背景的标签。背景可以是颜色或者图像。  </p>
+<h2 id="背景颜色"><a href="#背景颜色" class="headerlink" title="背景颜色"></a>背景颜色</h2><p>背景颜色属性将背景设置为某种颜色。属性值可以是十六进制数、RGB值或者颜色名。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">bgcolor</span>=<span class="string">"#000000"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">bgcolor</span>=<span class="string">"rgb(0,0,0)"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">bgcolor</span>=<span class="string">"black"</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>以上的代码均将背景颜色设置为黑色。</p>
+<h2 id="背景图像"><a href="#背景图像" class="headerlink" title="背景图像"></a>背景图像</h2><p>背景属性将背景设置为图像。属性值为图像的URL。如果图像尺寸小于浏览器窗口，那么图像将在整个浏览器窗口进行复制。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">background</span>=<span class="string">"sun.jpg"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">background</span>=<span class="string">"https://（存放 sun.jpg 的网站地址）"</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>ps</strong>: 如打算使用背景图片，应注意图像文件大小不超过10k，否则将增加页面加载时间。  </p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p><code>&lt;body&gt;</code>标签中的背景颜色(bgcolor)、背景(background)和文本(text)属性在 HTML 4 和 XHTML 中已被废弃。<br>现应使用层叠样式表(CSS)来定义 HTML 元素的布局和显示属性。</p>
+<h1 id="HTML-脚本"><a href="#HTML-脚本" class="headerlink" title="HTML 脚本"></a>HTML 脚本</h1><p><strong>JavaScript 使 HTML 页面具有更强的动态和交互性</strong></p>
+<h2 id="HTML-script元素"><a href="#HTML-script元素" class="headerlink" title="HTML script元素"></a>HTML script元素</h2><p><code>&lt;script&gt;</code>标签用于定义客户端脚本，如 JavaScript。必须的<code>type</code>属性规定脚本的 MIME 类型。<br><code>script</code>元素既可包含脚本语句，也可通过<code>src</code>属性指向外部脚本文件。<br>JavaScript 常用于图片操作、表单验证以及内容动态更新。<br>下述脚本会向浏览器输出“Hello World!”<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">document.write("Hello World!")</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="lt-noscript-gt-标签"><a href="#lt-noscript-gt-标签" class="headerlink" title="&lt;noscript&gt;标签"></a>&lt;noscript&gt;标签</h2><p><code>&lt;noscript&gt;</code>标签提供无法使用脚本时的替代内容，如在浏览器禁用脚本时，或浏览器不支持客户端脚本时。<br><code>noscript</code>元素包含普通 HTML 页面的<code>body</code>元素中能够找到的所有元素。<br>只有在浏览器不支持脚本或者禁用脚本时，才会显示<code>noscript</code>元素中的内容。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">document.write("Hello World!")</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">noscript</span>&gt;</span>Your browser dose not support JavaScript!<span class="tag">&lt;/<span class="name">noscript</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="HTML-头部"><a href="#HTML-头部" class="headerlink" title="HTML 头部"></a>HTML 头部</h1><p>下表列出了常用的 HTML 头部元素。</p>
+<table>
+<thead>
+<tr>
+<th>标签</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;head&gt;</td>
+<td>定义关于文档的信息</td>
+</tr>
+<tr>
+<td>&lt;title&gt;</td>
+<td>定义文档标题</td>
+</tr>
+<tr>
+<td>&lt;base&gt;</td>
+<td>定义页面上所有链接的默认地址或默认目标</td>
+</tr>
+<tr>
+<td>&lt;link&gt;</td>
+<td>定义文档与外部资源之间的关系</td>
+</tr>
+<tr>
+<td>&lt;meta&gt;</td>
+<td>定义关于 HTML 文档的元数据</td>
+</tr>
+<tr>
+<td>&lt;script&gt;</td>
+<td>定义客户端脚本</td>
+</tr>
+<tr>
+<td>&lt;style&gt;</td>
+<td>定义文档的样式信息</td>
+</tr>
+</tbody>
+</table>
+<h2 id="HTML-lt-head-gt-元素"><a href="#HTML-lt-head-gt-元素" class="headerlink" title="HTML &lt;head&gt;元素"></a>HTML &lt;head&gt;元素</h2><p><code>&lt;head&gt;</code>元素是所有头部元素的容器。<code>&lt;head&gt;</code>内的元素可包含脚本，指示浏览器在何处可以找到样式表，提供元信息等等。  </p>
+<h2 id="HTML-lt-title-gt-元素"><a href="#HTML-lt-title-gt-元素" class="headerlink" title="HTML &lt;title&gt;元素"></a>HTML &lt;title&gt;元素</h2><p><code>&lt;title&gt;</code>标签定义文档的标题。<code>title</code>元素在所有 HTML/XHTML 文档中都是必需的。<br><code>title</code>元素可以:</p>
+<ul>
+<li>定义浏览器工具栏中的标题  </li>
+<li>提供页面被添加到收藏夹时显示的标题  </li>
+<li>显示在搜索引擎结果中的页面标题</li>
+</ul>
+<p>下面是一个简化的 HTML 文档<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Title of the document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">The content of the document...</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="HTML-lt-base-gt-元素"><a href="#HTML-lt-base-gt-元素" class="headerlink" title="HTML &lt;base&gt;元素"></a>HTML &lt;base&gt;元素</h2><p><code>&lt;base&gt;</code>标签为页面上的所有链接规定默认地址或默认目标。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">base</span> <span class="attr">href</span>=<span class="string">"http://www.baidu.com"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">base</span> <span class="attr">target</span>=<span class="string">"_blank"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="HTML-lt-link-gt-元素"><a href="#HTML-lt-link-gt-元素" class="headerlink" title="HTML &lt;link&gt;元素"></a>HTML &lt;link&gt;元素</h2><p><code>&lt;link&gt;</code>标签定义文档与外部资源之间的关系。<br><code>&lt;link&gt;</code>标签常用于连接样式表。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"mystyle.css"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="HTML-lt-style-gt-元素"><a href="#HTML-lt-style-gt-元素" class="headerlink" title="HTML &lt;style&gt;元素"></a>HTML &lt;style&gt;元素</h2><p><code>&lt;style&gt;</code>标签用于为 HTML 文档定义样式信息。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">body &#123;background-color:red&#125;</span></span><br><span class="line"><span class="undefined">p &#123;color:blue&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="HTML-lt-meta-gt-元素"><a href="#HTML-lt-meta-gt-元素" class="headerlink" title="HTML &lt;meta&gt;元素"></a>HTML &lt;meta&gt;元素</h2><p>元数据(metadata)是关于数据的信息。<code>&lt;meta&gt;</code>标签提供关于 HTML 文档的元数据。元数据不会显示在页面上，但对于机器是可读的。<br>典型的情况是，<code>meta</code>元素被用于规定页面的描述、关键词、文档的作者、最后修改时间以及其他元数据。<br><code>&lt;meta&gt;</code>标签始终位于<code>head</code>元素中。元数据可用于浏览器(如何显示内容或重新加载页面)，搜索引擎(关键词)，或者其他web服务。<br><strong>针对搜索引擎的关键词</strong><br>一些搜索引擎会利用<code>meta</code>元素的<code>name</code>和<code>content</code>属性来索引你的页面。<br>下面的<code>meta</code>元素定义页面的描述:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"description"</span> <span class="attr">content</span>=<span class="string">"Just a web for test"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>下面的<code>meta</code>元素定义页面的关键词:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">"???"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><code>name</code>和<code>content</code>属性的作用是描述页面的内容。  </p>
+<h1 id="HTML-字符实体"><a href="#HTML-字符实体" class="headerlink" title="HTML 字符实体"></a>HTML 字符实体</h1><p><strong>HTML 中的预留字符必须被替换为字符实体</strong>  </p>
+<h2 id="HTML-实体"><a href="#HTML-实体" class="headerlink" title="HTML 实体"></a>HTML 实体</h2><p>在 HTML 中，某些字符是预留的。<br>在 HTML 中不能使用小于号(&lt;)和大于号(&gt;)，这是因为浏览器会误认为它们是标签。<br>如想正常地显示预留字符，则必须在 HTML 源代码中使用字符实体(character entities)。<br>字符实体类似这样:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&amp;entity_name;</span><br><span class="line">或者</span><br><span class="line">&amp;#entity_number;</span><br></pre></td></tr></table></figure></p>
+<p>如需显示小于号，须这样书写：<code>&amp;lt;</code>或<code>&amp;#60</code>。<br><strong>ps</strong>: 使用实体名而不是数字的好处是，名称易于记忆。坏处是，浏览器或许并不支持所有实体名称(对实体数字的支持却很好)。  </p>
+<h2 id="不间断空格-non-breaking-space"><a href="#不间断空格-non-breaking-space" class="headerlink" title="不间断空格(non-breaking space)"></a>不间断空格(non-breaking space)</h2><p>HTML 中常用字符实体是不间断空格(<code>&amp;nbsp;</code>)。<br>浏览器总是会截短 HTML 页面中的空格。如果在文本中写10个空格，在显示该页面之前，浏览器会删除它们中的9个。<br>如需在页面中增加空格的数量，需使用<code>&amp;nbsp;</code>字符实体。  </p>
+<h2 id="HTML-中有用的字符实体"><a href="#HTML-中有用的字符实体" class="headerlink" title="HTML 中有用的字符实体"></a>HTML 中有用的字符实体</h2><table>
+<thead>
+<tr>
+<th>显示结果</th>
+<th>描述</th>
+<th>实体名称</th>
+<th>实体编号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&nbsp;</td>
+<td>空格</td>
+<td><code>&amp;nbsp;</code></td>
+<td><code>&amp;#160;</code></td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>小于号</td>
+<td><code>&amp;lt;</code></td>
+<td><code>&amp;#60;</code></td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>大于号</td>
+<td><code>&amp;gt;</code></td>
+<td><code>&amp;#62;</code></td>
+</tr>
+<tr>
+<td>&amp;</td>
+<td>和号</td>
+<td><code>&amp;amp;</code></td>
+<td><code>&amp;#38;</code></td>
+</tr>
+<tr>
+<td>“</td>
+<td>引号</td>
+<td><code>&amp;quot;</code></td>
+<td><code>&amp;#34;</code></td>
+</tr>
+<tr>
+<td>‘</td>
+<td>撇号</td>
+<td><code>&amp;apos; (IE不支持)</code></td>
+<td><code>&amp;#39;</code></td>
+</tr>
+<tr>
+<td>￠</td>
+<td>分</td>
+<td><code>&amp;cent;</code></td>
+<td><code>&amp;#162;</code></td>
+</tr>
+<tr>
+<td>£</td>
+<td>镑</td>
+<td><code>&amp;pound;</code></td>
+<td><code>&amp;#163;</code></td>
+</tr>
+<tr>
+<td>¥</td>
+<td>元</td>
+<td><code>&amp;yen;</code></td>
+<td><code>&amp;#165;</code></td>
+</tr>
+<tr>
+<td>€</td>
+<td>欧元</td>
+<td><code>&amp;euro;</code></td>
+<td><code>&amp;#8364;</code></td>
+</tr>
+<tr>
+<td>§</td>
+<td>小节</td>
+<td><code>&amp;sect;</code></td>
+<td><code>&amp;#167;</code></td>
+</tr>
+<tr>
+<td>©</td>
+<td>版权</td>
+<td><code>&amp;copy;</code></td>
+<td><code>&amp;#169;</code></td>
+</tr>
+<tr>
+<td>®</td>
+<td>注册商标</td>
+<td><code>&amp;reg;</code></td>
+<td><code>&amp;#174;</code></td>
+</tr>
+<tr>
+<td>™</td>
+<td>商标</td>
+<td><code>&amp;trade;</code></td>
+<td><code>&amp;#8482;</code></td>
+</tr>
+<tr>
+<td>×</td>
+<td>乘号</td>
+<td><code>&amp;times;</code></td>
+<td><code>&amp;#215;</code></td>
+</tr>
+<tr>
+<td>÷</td>
+<td>除号</td>
+<td><code>&amp;divide;</code></td>
+<td><code>&amp;#247;</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>ps</strong>: 实体名称对大小写敏感 !</p>
+<p><strong>To Be Continued…</strong></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/HTML/" rel="tag"># HTML</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/05/HTML学习(四)/" rel="next" title="HTML学习(四)">
+                <i class="fa fa-chevron-left"></i> HTML学习(四)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="Inory" />
+            
+              <p class="site-author-name" itemprop="name">Inory</p>
+              <p class="site-description motion-element" itemprop="description">刻んだ時だよ さあいくよ 歩き出す 坂の道を</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Inory50831" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/u/5693526330?refer_flag=1005055010_" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-[object Object]"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.cnblogs.com/mxwbq/" title="舞动数字" target="_blank">舞动数字</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://youngxhui.github.io/" title="ISLAND" target="_blank">ISLAND</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.csdn.net/p_monkey_lh/" title="P_Monkey_lh" target="_blank">P_Monkey_lh</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML-框架"><span class="nav-number">1.</span> <span class="nav-text">HTML 框架</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#框架标签"><span class="nav-number">1.1.</span> <span class="nav-text">框架标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例"><span class="nav-number">1.1.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#混合框架"><span class="nav-number">1.2.</span> <span class="nav-text">混合框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#导航框架"><span class="nav-number">1.3.</span> <span class="nav-text">导航框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-2"><span class="nav-number">1.3.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内联框架"><span class="nav-number">1.4.</span> <span class="nav-text">内联框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#iframe-添加"><span class="nav-number">1.4.1.</span> <span class="nav-text">iframe 添加</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iframe-边界"><span class="nav-number">1.4.2.</span> <span class="nav-text">iframe 边界</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iframe-边框"><span class="nav-number">1.4.3.</span> <span class="nav-text">iframe 边框</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML-背景"><span class="nav-number">2.</span> <span class="nav-text">HTML 背景</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景颜色"><span class="nav-number">2.1.</span> <span class="nav-text">背景颜色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#背景图像"><span class="nav-number">2.2.</span> <span class="nav-text">背景图像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意事项"><span class="nav-number">2.3.</span> <span class="nav-text">注意事项</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML-脚本"><span class="nav-number">3.</span> <span class="nav-text">HTML 脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML-script元素"><span class="nav-number">3.1.</span> <span class="nav-text">HTML script元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-noscript-gt-标签"><span class="nav-number">3.2.</span> <span class="nav-text">&lt;noscript&gt;标签</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML-头部"><span class="nav-number">4.</span> <span class="nav-text">HTML 头部</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML-lt-head-gt-元素"><span class="nav-number">4.1.</span> <span class="nav-text">HTML &lt;head&gt;元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML-lt-title-gt-元素"><span class="nav-number">4.2.</span> <span class="nav-text">HTML &lt;title&gt;元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML-lt-base-gt-元素"><span class="nav-number">4.3.</span> <span class="nav-text">HTML &lt;base&gt;元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML-lt-link-gt-元素"><span class="nav-number">4.4.</span> <span class="nav-text">HTML &lt;link&gt;元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML-lt-style-gt-元素"><span class="nav-number">4.5.</span> <span class="nav-text">HTML &lt;style&gt;元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML-lt-meta-gt-元素"><span class="nav-number">4.6.</span> <span class="nav-text">HTML &lt;meta&gt;元素</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML-字符实体"><span class="nav-number">5.</span> <span class="nav-text">HTML 字符实体</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML-实体"><span class="nav-number">5.1.</span> <span class="nav-text">HTML 实体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不间断空格-non-breaking-space"><span class="nav-number">5.2.</span> <span class="nav-text">不间断空格(non-breaking space)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML-中有用的字符实体"><span class="nav-number">5.3.</span> <span class="nav-text">HTML 中有用的字符实体</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Inory</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">9.8k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/libe/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libe/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libe/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libe/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libe/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libe/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
