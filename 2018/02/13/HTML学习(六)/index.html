@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/libe/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/libe/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="HTML," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="HTML 表单HTML 表单用于搜集不同类型的用户输入   &amp;lt;form&amp;gt;元素HTML 表单用于收集用户输入。&amp;lt;form&amp;gt;元素定义 HTML 表单: 实例12345&amp;lt;form&amp;gt;  .form elements  .&amp;lt;/form&amp;gt;">
+<meta name="keywords" content="HTML">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML学习(六)">
+<meta property="og:url" content="https://inory50831.github.io/2018/02/13/HTML学习(六)/index.html">
+<meta property="og:site_name" content="Iworld">
+<meta property="og:description" content="HTML 表单HTML 表单用于搜集不同类型的用户输入   &amp;lt;form&amp;gt;元素HTML 表单用于收集用户输入。&amp;lt;form&amp;gt;元素定义 HTML 表单: 实例12345&amp;lt;form&amp;gt;  .form elements  .&amp;lt;/form&amp;gt;">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-02-13T08:35:38.096Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTML学习(六)">
+<meta name="twitter:description" content="HTML 表单HTML 表单用于搜集不同类型的用户输入   &amp;lt;form&amp;gt;元素HTML 表单用于收集用户输入。&amp;lt;form&amp;gt;元素定义 HTML 表单: 实例12345&amp;lt;form&amp;gt;  .form elements  .&amp;lt;/form&amp;gt;">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://inory50831.github.io/2018/02/13/HTML学习(六)/"/>
+
+
+
+
+
+  <title>HTML学习(六) | Iworld</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?15ceb2f5458a321f26b539fb1240ecaf";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Iworld</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">只会嘤嘤嘤的萌新(滑稽)</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://inory50831.github.io/2018/02/13/HTML学习(六)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Inory">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Iworld">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">HTML学习(六)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-13T10:39:49+08:00">
+                2018-02-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  5,473
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  24
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="HTML-表单"><a href="#HTML-表单" class="headerlink" title="HTML 表单"></a>HTML 表单</h1><p><strong>HTML 表单用于搜集不同类型的用户输入</strong>  </p>
+<h2 id="lt-form-gt-元素"><a href="#lt-form-gt-元素" class="headerlink" title="&lt;form&gt;元素"></a>&lt;form&gt;元素</h2><p>HTML 表单用于收集用户输入。<code>&lt;form&gt;</code>元素定义 HTML 表单:</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">  .</span><br><span class="line">form elements</span><br><span class="line">  .</span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p><strong>HTML 表单包含表单元素</strong><br>表单元素指的是不同类型的 input 元素、复选框、单选按钮、提交按钮等等。  </p>
+<h2 id="lt-input-gt-元素"><a href="#lt-input-gt-元素" class="headerlink" title="&lt;input&gt;元素"></a>&lt;input&gt;元素</h2><p><code>&lt;input&gt;</code>元素是最重要的<strong>表单元素</strong>。根据不同的<code>type</code>属性，<code>&lt;input&gt;</code>元素可分为不同形态。例：  </p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>text</td>
+<td>定义常规文本输入</td>
+</tr>
+<tr>
+<td>radio</td>
+<td>定义单选按钮输入</td>
+</tr>
+<tr>
+<td>submit</td>
+<td>定义提交按钮</td>
+</tr>
+</tbody>
+</table>
+<h3 id="文本输入"><a href="#文本输入" class="headerlink" title="文本输入"></a>文本输入</h3><p><code>&lt;input type =&quot;text&quot;&gt;</code>定义用于<strong>文本输入</strong>的单行输入字段。  </p>
+<h4 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">  First name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"firstname"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">  Last name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"lastname"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上述代码在浏览器中的显示如下：  </p>
+<form><br>  First name:<br><input type="text" name="firstname"><br>  Last name:<br><input type="text" name="lastname"><br></form>
+
+<p><strong>ps</strong>: 表单本身并不可见，文本字段的默认宽度是20个字符。  </p>
+<h3 id="单选按钮输入"><a href="#单选按钮输入" class="headerlink" title="单选按钮输入"></a>单选按钮输入</h3><p><code>&lt;input type=&quot;radio&quot;&gt;</code>定义<strong>单选按钮</strong>，单选按钮允许用户在有限数量的选择中选择其中之一。  </p>
+<h4 id="实例-2"><a href="#实例-2" class="headerlink" title="实例"></a>实例</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"sex"</span> <span class="attr">value</span>=<span class="string">"male"</span> <span class="attr">checked</span>&gt;</span>Male</span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"sex"</span> <span class="attr">value</span>=<span class="string">"female"</span>&gt;</span>Female</span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上述代码在浏览器中的显示如下：  </p>
+<form><br><input type="radio" name="sex" value="male" checked>Male<br><input type="radio" name="sex" value="female">Female<br></form>
+
+<h3 id="提交按钮"><a href="#提交按钮" class="headerlink" title="提交按钮"></a>提交按钮</h3><p><code>&lt;input  type=&quot;submit&quot;&gt;</code>定义用于向<strong>表单处理程序</strong>(form-handler)提交表单按钮。<br>表单处理程序通常是包含用来处理输入数据的脚本的服务器页面。表单处理程序在表单的<code>action</code>属性中指定。</p>
+<h4 id="实例-3"><a href="#实例-3" class="headerlink" title="实例"></a>实例</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"action_page.php"</span>&gt;</span></span><br><span class="line">First name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"firstname"</span> <span class="attr">value</span>=<span class="string">"John"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">Last name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">tyoe</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"lastname"</span> <span class="attr">value</span>=<span class="string">"Smith"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"Submit"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上述代码在浏览器中的显示如下：  </p>
+<form action="action_page.php"><br>First name:<br><input type="text" name="firstname" value="John"><br>Last name:<br><input tyoe="text" name="lastname" value="Smith"><br><br><br><input type="submit" value="Submit"><br></form>
+
+<h2 id="Action-属性"><a href="#Action-属性" class="headerlink" title="Action 属性"></a>Action 属性</h2><p><strong>action 属性</strong>定义在提交表单时执行的动作。向服务器提交表单的通常做法是使用提交按钮。通常，表单会被提交到web服务器上的网页。<br>在上面的例子中，指定了某个服务器脚本来处理被提交表单：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"action_page.php"</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>如果省略<code>action</code>属性，则<code>action</code>属性会被设置为当前页面。  </p>
+<h2 id="Method-属性"><a href="#Method-属性" class="headerlink" title="Method 属性"></a>Method 属性</h2><p><strong>method 属性</strong>规定在提交表单时所用的 HTTP 方法(<strong>GET</strong> 或 <strong>POST</strong>)<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"action_page.php"</span> <span class="attr">method</span>=<span class="string">"GET"</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>或<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"action_page.php"</span> <span class="attr">method</span>=<span class="string">"POST"</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>GET 方法</strong><br>如果表单提交是被动的(如搜索引擎查询)，并且没有敏感信息，则可使用 GET (默认方法)。<br>当使用 GET 时，表单数据在页面地址栏中是可见的：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">action_page.php?firstname=John&amp;lastname=Smith</span><br></pre></td></tr></table></figure></p>
+<p><strong>ps</strong>: GET 最适合少量数据的提交。浏览器会设定容量限制。<br><strong>POST 方法</strong><br>如果表单正在更新数据，或者包含敏感信息(如密码),则可使用 POST。<br>POST 的安全性更强，因为页面地址栏中被提交的数据是不可见的。</p>
+<h2 id="Name-属性"><a href="#Name-属性" class="headerlink" title="Name 属性"></a>Name 属性</h2><p>如果要正确的被提交，每个输入字段必须设置一个<code>name</code>属性。<br>下述例子只会提交”Last name”输入字段：  </p>
+<h3 id="实例-4"><a href="#实例-4" class="headerlink" title="实例"></a>实例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"action_page.php"</span>&gt;</span></span><br><span class="line">First name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">"John"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">Last name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"lastname"</span> <span class="attr">value</span>=<span class="string">"Smith"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"Submit"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="Form-属性"><a href="#Form-属性" class="headerlink" title="Form 属性"></a>Form 属性</h2><p>下面为<code>&lt;form&gt;</code>属性的列表  </p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>accept-charset</td>
+<td>规定被提交表单中使用的字符集(默认：页面字符集)</td>
+</tr>
+<tr>
+<td>action</td>
+<td>规定向被提交表单的地址(URL)</td>
+</tr>
+<tr>
+<td>autocomplete</td>
+<td>规定浏览器应该自动完成表单(默认：开启)</td>
+</tr>
+<tr>
+<td>enctype</td>
+<td>规定被提交数据的编码(默认：url-encoded)</td>
+</tr>
+<tr>
+<td>method</td>
+<td>规定在提交表单时所用的 HTTP 方法(默认：GET)</td>
+</tr>
+<tr>
+<td>name</td>
+<td>规定识别表单的名称(对于 DOM 使用:document.forms.name)</td>
+</tr>
+<tr>
+<td>novalidate</td>
+<td>规定浏览器不验证表单</td>
+</tr>
+<tr>
+<td>target</td>
+<td>规定 action 属性中地址的目标(默认：_self)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="用-lt-fieldset-gt-组合表单数据"><a href="#用-lt-fieldset-gt-组合表单数据" class="headerlink" title="用&lt;fieldset&gt;组合表单数据"></a>用&lt;fieldset&gt;组合表单数据</h2><p><code>&lt;fieldset&gt;</code>元素组合表单中的相关数据，<code>&lt;legend&gt;</code>元素为<code>&lt;fieldset&gt;</code>元素定义标题。  </p>
+<h3 id="实例-5"><a href="#实例-5" class="headerlink" title="实例"></a>实例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"action_page.php"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">fieldset</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">legend</span>&gt;</span>Personal information:<span class="tag">&lt;/<span class="name">legend</span>&gt;</span></span><br><span class="line">First name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"firstname"</span> <span class="attr">value</span>=<span class="string">"John"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">Last name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"lastname"</span> <span class="attr">value</span>=<span class="string">"Smith"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"Submit"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">fieldset</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上述代码在浏览器中的显示如下：  </p>
+<form action="action_page.php"><br><fieldset><br><legend>Personal information:</legend><br>First name:<br><input type="text" name="firstname" value="John"><br>Last name：<br><input type="text" name="lastname" value="Smith"><br><br><br><input type="submit" value="Submit"><br></fieldset><br></form>
+
+
+<h1 id="HTML-表单元素"><a href="#HTML-表单元素" class="headerlink" title="HTML 表单元素"></a>HTML 表单元素</h1><h2 id="lt-input-gt-元素-1"><a href="#lt-input-gt-元素-1" class="headerlink" title="&lt;input&gt; 元素"></a>&lt;input&gt; 元素</h2><p>最重要的表单元素是<code>&lt;input&gt;</code>元素。<code>&lt;input&gt;</code>元素根据不同的<code>type</code>属性，可以变化为多种形态。</p>
+<h2 id="lt-select-gt-元素"><a href="#lt-select-gt-元素" class="headerlink" title="&lt;select&gt; 元素"></a>&lt;select&gt; 元素</h2><p><code>&lt;select&gt;</code>元素定义<strong>下拉列表</strong>。  </p>
+<h3 id="实例-6"><a href="#实例-6" class="headerlink" title="实例"></a>实例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">"cars"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"volvo"</span>&gt;</span>Volvo<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"saab"</span>&gt;</span>saab<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"fiat"</span>&gt;</span>Fiat<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"audi"</span>&gt;</span>Audi<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上述代码在浏览器中的显示如下：  </p>
+<select name="cars"><br><option value="volvo">Volvo</option><br><option value="saab">saab</option><br><option value="fiat">Fiat</option><br><option value="audi">Audi</option><br></select>
+
+<p><strong>ps</strong>: <code>&lt;option&gt;</code>元素定义待选择的选项。列表通常会把首个选项显示为被选选项，可通过添加<code>selected</code>属性来定义预定义选项。<br><strong>例</strong>：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"fiat"</span> <span class="attr">selected</span>&gt;</span>Fiat<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="lt-textarea-gt-元素"><a href="#lt-textarea-gt-元素" class="headerlink" title="&lt;textarea&gt; 元素"></a>&lt;textarea&gt; 元素</h2><p><code>&lt;textarea&gt;</code>元素定义多行输入字段(文本域)。  </p>
+<h3 id="实例-7"><a href="#实例-7" class="headerlink" title="实例"></a>实例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">name</span>=<span class="string">"message"</span> <span class="attr">rows</span>=<span class="string">"10"</span> <span class="attr">cols</span>=<span class="string">"10"</span>&gt;</span></span><br><span class="line">The cat was playing in the garden.</span><br><span class="line"><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上述代码在浏览器中的显示如下：  </p>
+<textarea name="message" rows="10" cols="30">The cat was playing in the garden.</textarea>
+
+<h2 id="lt-button-gt-元素"><a href="#lt-button-gt-元素" class="headerlink" title="&lt;button&gt; 元素"></a>&lt;button&gt; 元素</h2><p><code>&lt;button&gt;</code>元素定义可点击的<strong>按钮</strong>。  </p>
+<h3 id="实例-8"><a href="#实例-8" class="headerlink" title="实例"></a>实例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">oncliclk</span>=<span class="string">"alert('Hello World!')"</span>&gt;</span>Click Me<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上述代码在浏览器中的显示如下：  </p>
+<button type="button" oncliclk="alert('Hello World!')">Click Me</button>
+
+<h2 id="HTML5-表单元素"><a href="#HTML5-表单元素" class="headerlink" title="HTML5 表单元素"></a>HTML5 表单元素</h2><p>HTML5 增加了如下表单元素：  </p>
+<ul>
+<li>&lt;datalist&gt;</li>
+<li>&lt;keygen&gt;</li>
+<li>&lt;output&gt;</li>
+</ul>
+<p><strong>ps</strong>: 默认地，浏览器不会显示未知元素，新元素不会破坏页面。</p>
+<h2 id="HTML5-lt-datalist-gt-元素"><a href="#HTML5-lt-datalist-gt-元素" class="headerlink" title="HTML5 &lt;datalist&gt; 元素"></a>HTML5 &lt;datalist&gt; 元素</h2><p><code>&lt;datalist&gt;</code>元素为<code>&lt;input&gt;</code>元素规定预定义选项列表。用户会在他们输入数据时看到预定义选项的下拉列表。<br><code>&lt;input&gt;</code>元素的<code>list</code>属性必须引用<code>&lt;datalist&gt;</code>元素的<code>id</code>属性。</p>
+<h3 id="实例-9"><a href="#实例-9" class="headerlink" title="实例"></a>实例</h3><p>通过<code>&lt;datalist&gt;</code>设置预定义值的<code>&lt;input&gt;</code>元素：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"action_page.php"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">list</span>=<span class="string">"browsers"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">datalist</span> <span class="attr">id</span>=<span class="string">"browsers"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Internet Explorer"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Firefox"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Chrome"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Opera"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Safari"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">datalist</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>上述代码在浏览器中的显示如下：  </p>
+<form action="action_page.php"><br><input list="browsers"><br><datalist id="browsers"><br>    <option value="Internet Explorer"><br>    </option><option value="Firefox"><br>    </option><option value="Chrome"><br>    </option><option value="Opera"><br>    </option><option value="Safari"><br></option></datalist><br></form>
+
+<h1 id="HTML-输入类型"><a href="#HTML-输入类型" class="headerlink" title="HTML 输入类型"></a>HTML 输入类型</h1><h2 id="text-类型"><a href="#text-类型" class="headerlink" title="text 类型"></a>text 类型</h2><p><code>&lt;input type=&quot;text&quot;&gt;</code>定义供<strong>文本输入</strong>的单行输入字段。  </p>
+<h3 id="实例-10"><a href="#实例-10" class="headerlink" title="实例"></a>实例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">First name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"firstname"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">Last name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"lastname"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上述代码在浏览器中的显示如下：  </p>
+<form><br>First name:<br><input type="text" name="firstname"><br>Last name:<br><input type="text" name="lastname"><br></form>
+
+<h2 id="password-类型"><a href="#password-类型" class="headerlink" title="password 类型"></a>password 类型</h2><p><code>&lt;input type=&quot;password&quot;&gt;</code>定义<strong>密码字段</strong>。  </p>
+<h3 id="实例-11"><a href="#实例-11" class="headerlink" title="实例"></a>实例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">User name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"username"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">User password:<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">name</span>=<span class="string">"userpassword"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上述代码在浏览器中的显示如下：  </p>
+<form><br>User name:<br><input type="text" name="username"><br>User password:<br><input type="password" name="userpassword"><br></form>
+
+<p><strong>ps</strong>: password 字段中的字符会被做掩码处理(显示为星号或实心圆)。  </p>
+<h2 id="submit-类型"><a href="#submit-类型" class="headerlink" title="submit 类型"></a>submit 类型</h2><p><code>&lt;input type=&quot;submit&quot;&gt;</code>定义提交表单数据至<strong>表单处理程序</strong>的按钮。<br>表单处理程序(form-handler)通常是包含处理输入数据的脚本的服务器页面。<br>在表单的<code>action</code>属性中规定表单处理程序。  </p>
+<h3 id="实例-12"><a href="#实例-12" class="headerlink" title="实例"></a>实例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"action_page.php"</span>&gt;</span></span><br><span class="line">First name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"firstname"</span> <span class="attr">value</span>=<span class="string">"John"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">Last name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"lastname"</span> <span class="attr">value</span>=<span class="string">"Smith"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"Submit"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上述代码在浏览器中的显示如下：  </p>
+<form action="action_page.php"><br>First name:<br><input type="text" name="firstname" value="John"><br>Last name:<br><input type="text" name="lastname" value="Smith"><br><br><br><input type="submit" value="Submit"><br></form>
+
+<h2 id="radio-类型"><a href="#radio-类型" class="headerlink" title="radio 类型"></a>radio 类型</h2><p><code>&lt;input type=&quot;radio&quot;&gt;</code>定义<strong>单选按钮</strong>。<br>单选按钮允许用户在有限数量的选项中选择一个选项。</p>
+<h3 id="实例-13"><a href="#实例-13" class="headerlink" title="实例"></a>实例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"sex"</span> <span class="attr">value</span>=<span class="string">"male"</span> <span class="attr">checked</span>&gt;</span>Male</span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"sex"</span> <span class="attr">value</span>=<span class="string">"female"</span>&gt;</span>Female</span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上述代码在浏览器中的显示如下：  </p>
+<form><br><input type="radio" name="sex" value="male" checked>Male<br><input type="radio" name="sex" value="female">Female<br></form>
+
+<h2 id="checkbox-类型"><a href="#checkbox-类型" class="headerlink" title="checkbox 类型"></a>checkbox 类型</h2><p><code>&lt;input type=&quot;checkbox&quot;&gt;</code>定义<strong>复选框</strong>。<br>复选框允许用户在有限数量的选项中选择零个或多个选项。</p>
+<h3 id="实例-14"><a href="#实例-14" class="headerlink" title="实例"></a>实例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"vehicle"</span> <span class="attr">value</span>=<span class="string">"Bike"</span>&gt;</span>I have a bike.</span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"vehicle"</span> <span class="attr">value</span>=<span class="string">"Car"</span>&gt;</span>I have a car.</span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上述代码在浏览器中的显示如下：  </p>
+<form><br><input type="checkbox" name="vehicle" value="Bike">I have a bike.<br><input type="checkbox" name="vehicle" value="Car">I have a car.<br></form>
+
+<h2 id="button-类型"><a href="#button-类型" class="headerlink" title="button 类型"></a>button 类型</h2><p><code>&lt;input type=&quot;button&quot;&gt;</code>定义<strong>按钮</strong>。  </p>
+<h3 id="实例-15"><a href="#实例-15" class="headerlink" title="实例"></a>实例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">onclick</span>=<span class="string">"alert('Hello World!')"</span> <span class="attr">value</span>=<span class="string">"Click Me"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上述代码在浏览器中的显示如下：  </p>
+<input type="button" onclick="alert('Hello World!')" value="Click Me">
+
+<h2 id="HTML5-输入类型"><a href="#HTML5-输入类型" class="headerlink" title="HTML5 输入类型"></a>HTML5 输入类型</h2><p>HTML5 增加了多个新的输入类型:  </p>
+<ul>
+<li>color</li>
+<li>date</li>
+<li>datetime</li>
+<li>datetime-local</li>
+<li>email</li>
+<li>month</li>
+<li>number</li>
+<li>range</li>
+<li>search</li>
+<li>tel</li>
+<li>time</li>
+<li>url</li>
+<li>week</li>
+</ul>
+<p><strong>ps</strong>: 老式web浏览器不支持的输入类型，会被视为输入类型 text。  </p>
+<h2 id="number-类型"><a href="#number-类型" class="headerlink" title="number 类型"></a>number 类型</h2><p><code>&lt;input type=&quot;number&quot;&gt;</code>用于应该包含数字值的输入字段。<br>根据浏览器支持，可对输入数字字段做出限制。  </p>
+<h3 id="实例-16"><a href="#实例-16" class="headerlink" title="实例"></a>实例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">Quantity (between 1 to 5):</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"number"</span> <span class="attr">name</span>=<span class="string">"quantity"</span> <span class="attr">min</span>=<span class="string">"1"</span> <span class="attr">max</span>=<span class="string">"5"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上述代码在浏览器中的显示如下：  </p>
+<form><br>Quantity (between 1 to 5):<br><input type="number" name="quantity" min="1" max="5"><br></form>
+
+<h2 id="date-类型"><a href="#date-类型" class="headerlink" title="date 类型"></a>date 类型</h2><p><code>&lt;input type=&quot;data&quot;&gt;</code>用于包含日期的输入字段。<br>根据浏览器支持，日期选择器会出现输入字段中。  </p>
+<h3 id="实例-17"><a href="#实例-17" class="headerlink" title="实例"></a>实例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">Birthday:</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"date"</span> <span class="attr">name</span>=<span class="string">"baby"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上述代码在浏览器中的显示如下：  </p>
+<form><br>Birthday:<br><input type="date" name="bday"><br></form>
+
+<p>可向输入添加限制：</p>
+<h3 id="实例-18"><a href="#实例-18" class="headerlink" title="实例"></a>实例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">Enter a date before 1980-01-01:</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"date"</span> <span class="attr">name</span>=<span class="string">"bday"</span> <span class="attr">max</span>=<span class="string">"1979-12-31"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">Enter a date after 2000-01-01:</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"date"</span> <span class="attr">name</span>=<span class="string">"bday"</span> <span class="attr">min</span>=<span class="string">"2000-01-02"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上述代码在浏览器中的显示如下：  </p>
+<form><br>Enter a date before 1980-01-01:<br><input type="date" name="bday" max="1979-12-31"><br>Enter a date after 2000-01-01:<br><input type="date" name="bday" min="2000-01-02"><br></form>
+
+<h2 id="color-类型"><a href="#color-类型" class="headerlink" title="color 类型"></a>color 类型</h2><p><code>&lt;input type=&quot;color&quot;&gt;</code>用于应该包含颜色的输入字段。<br>根据浏览器支持，颜色选择器会出现输入字段中。  </p>
+<h3 id="实例-19"><a href="#实例-19" class="headerlink" title="实例"></a>实例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">Select your favorite color:</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"color"</span> <span class="attr">name</span>=<span class="string">"favorite"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上述代码在浏览器中的显示如下：  </p>
+<form><br>Select your favorite color:<br><input type="color" name="favorite"><br></form>
+
+<h2 id="range-类型"><a href="#range-类型" class="headerlink" title="range 类型"></a>range 类型</h2><p><code>&lt;input type=&quot;range&quot;&gt;</code>用于应该包含一定范围内的值的输入字段。<br>根据浏览器支持，输入字段能够显示为滑块控件。  </p>
+<h3 id="实例-20"><a href="#实例-20" class="headerlink" title="实例"></a>实例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"range"</span> <span class="attr">name</span>=<span class="string">"points"</span> <span class="attr">min</span>=<span class="string">"0"</span> <span class="attr">max</span>=<span class="string">"10"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上述代码在浏览器中的显示如下：  </p>
+<form><br><input type="range" name="points" min="0" max="10"><br></form>
+
+<h2 id="month-类型"><a href="#month-类型" class="headerlink" title="month 类型"></a>month 类型</h2><p><code>&lt;input type=&quot;month&quot;&gt;</code>允许用户选择月份和年份。<br>根据浏览器支持，日期选择器会出现输入字段中。  </p>
+<h3 id="实例-21"><a href="#实例-21" class="headerlink" title="实例"></a>实例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">Birthday (month and year):</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"month"</span> <span class="attr">name</span>=<span class="string">"bdaymonth"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上述代码在浏览器中的显示如下：  </p>
+<form><br>Birthday (month and year):<br><input type="month" name="bdaymonth"><br></form>
+
+<h2 id="week-类型"><a href="#week-类型" class="headerlink" title="week 类型"></a>week 类型</h2><p><code>&lt;input type=&quot;week&quot;&gt;</code>允许用户选择周和年。<br>根据浏览器支持，日期选择器会出现输入字段中。  </p>
+<h3 id="实例-22"><a href="#实例-22" class="headerlink" title="实例"></a>实例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">Select a week:</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"week"</span> <span class="attr">name</span>=<span class="string">"week_year"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上述代码在浏览器中的显示如下：  </p>
+<form><br>Select a week:<br><input type="week" name="week_year"><br></form>
+
+<h2 id="time-类型"><a href="#time-类型" class="headerlink" title="time 类型"></a>time 类型</h2><p><code>&lt;input type=&quot;time&quot;&gt;</code>允许用户选择时间(无时区)。<br>根据浏览器支持，时间选择器会出现输入字段中。  </p>
+<h3 id="实例-23"><a href="#实例-23" class="headerlink" title="实例"></a>实例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">Select a time:</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"time"</span> <span class="attr">name</span>=<span class="string">"user_time"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上述代码在浏览器中的显示如下：  </p>
+<form><br>Select a time:<br><input type="time" name="user_time"><br></form>
+
+<h2 id="datetime-类型"><a href="#datetime-类型" class="headerlink" title="datetime 类型"></a>datetime 类型</h2><p><code>&lt;input type=&quot;datetime&quot;&gt;</code>允许用户选择日期和时间(有时区)。<br>根据浏览器支持，日期选择器会出现输入字段中。  </p>
+<h3 id="实例-24"><a href="#实例-24" class="headerlink" title="实例"></a>实例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">Birthday (date and time):</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"datetime"</span> <span class="attr">name</span>=<span class="string">"bdaytime"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上述代码在浏览器中的显示如下：  </p>
+<form><br>Birthday (date and time):<br><input type="datetime" name="bdaytime"><br></form>
+
+<h2 id="datetime-local-类型"><a href="#datetime-local-类型" class="headerlink" title="datetime-local 类型"></a>datetime-local 类型</h2><p><code>&lt;input type=&quot;datetime-local&quot;&gt;</code>允许用户选择日期和时间(无时区)。<br>根据浏览器支持，日期选择器会出现输入字段中。  </p>
+<h3 id="实例-25"><a href="#实例-25" class="headerlink" title="实例"></a>实例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">Birthday (date and time):</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"datetime-local"</span> <span class="attr">name</span>=<span class="string">"bdaytime"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上述代码在浏览器中的显示如下：  </p>
+<form><br>Birthday (date and time):<br><input type="datetime-local" name="bdaytime"><br></form>
+
+<h2 id="email-类型"><a href="#email-类型" class="headerlink" title="email 类型"></a>email 类型</h2><p><code>&lt;input type=&quot;email&quot;&gt;</code>用于应该包含电子邮件地址的输入字段。<br>根据浏览器支持，能够在被提交时在自动对电子邮件地址进行验证。  </p>
+<h3 id="实例-26"><a href="#实例-26" class="headerlink" title="实例"></a>实例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">E-mail:</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"email"</span> <span class="attr">name</span>=<span class="string">"email"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上述代码在浏览器中的显示如下：<br>E-mail:</p>
+<p><input type="email" name="email"><br></p>
+<h2 id="search-类型"><a href="#search-类型" class="headerlink" title="search 类型"></a>search 类型</h2><p><code>&lt;input type=&quot;search&quot;&gt;</code>用于搜索字段(搜索字段的表现类似常规文本字段)。  </p>
+<h3 id="实例-27"><a href="#实例-27" class="headerlink" title="实例"></a>实例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">Search Google:</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"search"</span> <span class="attr">name</span>=<span class="string">"googlesearch"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上述代码在浏览器中的显示如下：  </p>
+<form><br>Search Google:<br><input type="search" name="googlesearch"><br></form>
+
+<h2 id="tel-类型"><a href="#tel-类型" class="headerlink" title="tel 类型"></a>tel 类型</h2><p><code>&lt;input type=&quot;tel&quot;&gt;</code>用于应该包含电话号码的输入字段。  </p>
+<h3 id="实例-28"><a href="#实例-28" class="headerlink" title="实例"></a>实例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">Telephone:</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"tel"</span> <span class="attr">name</span>=<span class="string">"usertel"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上述代码在浏览器中的显示如下：  </p>
+<form><br>Telephone:<br><input type="tel" name="usertel"><br></form>
+
+<h2 id="url-类型"><a href="#url-类型" class="headerlink" title="url 类型"></a>url 类型</h2><p><code>&lt;input type=&quot;url&quot;&gt;</code>用于应该包含 URL 地址的输入字段。<br>根据浏览器支持，在提交时能够自动验证url字段。  </p>
+<h3 id="实例-29"><a href="#实例-29" class="headerlink" title="实例"></a>实例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">Add your homepage:</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"url"</span> <span class="attr">name</span>=<span class="string">"homepage"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上述代码在浏览器中的显示如下：  </p>
+<form><br>Add your homepage:<br><input type="url" name="homepage"><br></form>
+
+
+<h2 id="输入限制"><a href="#输入限制" class="headerlink" title="输入限制"></a>输入限制</h2><p>下面列出了一些常用的输入限制：  </p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>disabled</td>
+<td>规定输入字段应该被禁用</td>
+</tr>
+<tr>
+<td>max</td>
+<td>规定输入字段的最大值</td>
+</tr>
+<tr>
+<td>maxlength</td>
+<td>规定输入字段的最大字符数</td>
+</tr>
+<tr>
+<td>min</td>
+<td>规定输入字段的最小值</td>
+</tr>
+<tr>
+<td>minlength</td>
+<td>规定输入字段的最小字符数</td>
+</tr>
+<tr>
+<td>pattern</td>
+<td>规定通过其检查输入值的正则表达式</td>
+</tr>
+<tr>
+<td>readonly</td>
+<td>规定输入字段为只读(无法修改)</td>
+</tr>
+<tr>
+<td>required</td>
+<td>规定输入字段是必需的(必需填写)</td>
+</tr>
+<tr>
+<td>size</td>
+<td>规定输入字段的宽度(以字符计)</td>
+</tr>
+<tr>
+<td>step</td>
+<td>规定输入字段的合法数字间隔</td>
+</tr>
+<tr>
+<td>value</td>
+<td>规定输入字段的默认值</td>
+</tr>
+</tbody>
+</table>
+<h1 id="HTML-输入属性"><a href="#HTML-输入属性" class="headerlink" title="HTML 输入属性"></a>HTML 输入属性</h1><h2 id="value-属性"><a href="#value-属性" class="headerlink" title="value 属性"></a>value 属性</h2><p><code>value</code>属性规定输入字段的初始值。  </p>
+<h3 id="实例-30"><a href="#实例-30" class="headerlink" title="实例"></a>实例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">First name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"firstname"</span> <span class="attr">value</span>=<span class="string">"John"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">Last name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"lastname"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上述代码在浏览器中的显示如下：  </p>
+<form action=""><br>First name:<br><input type="text" name="firstname" value="John"><br>Last name:<br><input type="text" name="lastname"><br></form>
+
+<h2 id="readonly-属性"><a href="#readonly-属性" class="headerlink" title="readonly 属性"></a>readonly 属性</h2><p><code>readonly</code>属性规定输入字段为只读(不能修改)。  </p>
+<h3 id="实例-31"><a href="#实例-31" class="headerlink" title="实例"></a>实例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">First name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"firstname"</span> <span class="attr">value</span>=<span class="string">"John"</span> <span class="attr">readonly</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">Last name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"lastname"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上述代码在浏览器中的显示如下：  </p>
+<form action=""><br>First name:<br><input type="text" name="firstname" value="John" readonly><br>Last name:<br><input type="text" name="lastname"><br></form>
+
+<p><strong>ps</strong>: readonly属性不需要值。它等同同于 readonly=”readonly”。  </p>
+<h2 id="disabled-属性"><a href="#disabled-属性" class="headerlink" title="disabled 属性"></a>disabled 属性</h2><p><code>disabled</code>属性规定输入字段是禁用的。被禁用的元素是不可用和不可点击的，且不会被提交。  </p>
+<h3 id="实例-32"><a href="#实例-32" class="headerlink" title="实例"></a>实例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">First name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"firstname"</span> <span class="attr">value</span>=<span class="string">"John"</span> <span class="attr">disabled</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">Last name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"lastname"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上述代码在浏览器中的显示如下：  </p>
+<form action=""><br>First name:<br><input type="text" name="firstname" value="John" disabled><br>Last name:<br><input type="text" name="lastname"><br></form>
+
+<p><strong>ps</strong>: disabled属性不需要值。它等同于 disabled=”disabled”。  </p>
+<h2 id="size-属性"><a href="#size-属性" class="headerlink" title="size 属性"></a>size 属性</h2><p><code>size</code>属性规定输入字段的尺寸(以字符计)。  </p>
+<h3 id="实例-33"><a href="#实例-33" class="headerlink" title="实例"></a>实例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">First name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"firstname"</span> <span class="attr">value</span>=<span class="string">"John"</span> <span class="attr">size</span>=<span class="string">"50"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">Last name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"lastname"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上述代码在浏览器中的显示如下：  </p>
+<form action=""><br>First name:<br><input type="text" name="firstname" value="John" size="50"><br>Last name:<br><input type="text" name="lastname"><br></form>
+
+<h2 id="maxlength-属性"><a href="#maxlength-属性" class="headerlink" title="maxlength 属性"></a>maxlength 属性</h2><p><code>maxlength</code>属性规定输入字段允许的最大长度。  </p>
+<h3 id="实例-34"><a href="#实例-34" class="headerlink" title="实例"></a>实例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">First name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"firstname"</span> <span class="attr">maxlength</span>=<span class="string">"10"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">Last name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"lastname"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上述代码在浏览器中的显示如下：  </p>
+<form action=""><br>First name:<br><input type="text" name="firstname" maxlength="10"><br>Last name:<br><input type="text" name="lastname"><br></form>
+
+<p><strong>ps</strong>: 输入限制并非万无一失。JavaScript 提供了很多方法来增加非法输入。如需安全地限制输入，则接受者(服务器)必须同时对限制进行检查。  </p>
+<h2 id="autocomplete-属性"><a href="#autocomplete-属性" class="headerlink" title="autocomplete 属性"></a>autocomplete 属性</h2><p><code>autocomplete</code>属性规定表单或输入字段是否应该自动完成。当自动完成开启，浏览器会基于用户之前的输入值自动填写值。  </p>
+<h3 id="实例-35"><a href="#实例-35" class="headerlink" title="实例"></a>实例</h3><p>自动完成开启的 HTML 表单(某个输入字段为 off)。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"action_page.php"</span> <span class="attr">autocomplete</span>=<span class="string">"on"</span>&gt;</span></span><br><span class="line">First name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"firstname"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">Last name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"lastname"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">E-mail:<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"email"</span> <span class="attr">name</span>=<span class="string">"email"</span> <span class="attr">autocomplete</span>=<span class="string">"off"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>上述代码在浏览器中的显示如下：  </p>
+<form action="action_page.php" autocomplete="on"><br>First name:<br><input type="text" name="firstname"><br>Last name:<br><input type="text" name="lastname"><br>E-mail:<br><input type="email" name="email" autocomplete="off"><br><input type="submit"><br></form>
+
+<h2 id="novalidate-属性"><a href="#novalidate-属性" class="headerlink" title="novalidate 属性"></a>novalidate 属性</h2><p><code>novalidate</code>属性属于<code>&lt;form&gt;</code>属性。如果设置，则<code>novalidate</code>规定在提交表单时不对表单数据进行验证。  </p>
+<h3 id="实例-36"><a href="#实例-36" class="headerlink" title="实例"></a>实例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"action_page.php"</span> <span class="attr">novalidate</span>&gt;</span></span><br><span class="line">E-mail:<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"email"</span> <span class="attr">name</span>=<span class="string">"user_email"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上述代码在浏览器中的显示如下：  </p>
+<form action="action_page.php" novalidate=""><br>E-mail:<br><input type="email" name="user_email"><br><input type="submit"><br></form>
+
+<h2 id="autofocus-属性"><a href="#autofocus-属性" class="headerlink" title="autofocus 属性"></a>autofocus 属性</h2><p><code>autofocus</code>属性是布尔属性。如果设置，则规定当页面加载时<code>&lt;input&gt;</code>元素应该自动获得焦点。  </p>
+<h3 id="实例-37"><a href="#实例-37" class="headerlink" title="实例"></a>实例</h3><p>使”First name”输入字段在页面加载时自动获得焦点。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">First name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"firstname"</span> <span class="attr">autofocus</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="form-属性"><a href="#form-属性" class="headerlink" title="form 属性"></a>form 属性</h2><p><code>form</code>属性规定<code>&lt;input&gt;</code>元素所属的一个或者多个表单。<br><strong>ps</strong>: 如需引用一个以上的表单，请使用空格分隔表单 id 列表。  </p>
+<h3 id="实例-38"><a href="#实例-38" class="headerlink" title="实例"></a>实例</h3><p>输入字段位于 HTML 表单之外(但仍属表单)。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"action_page.php"</span> <span class="attr">id</span>=<span class="string">"form1"</span>&gt;</span></span><br><span class="line">First name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"firstname"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"Submit"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">Last name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"lastname"</span> <span class="attr">form</span>=<span class="string">"form1"</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>上述代码在浏览器中的显示如下：  </p>
+<form action="action_page.php" id="form1"><br>First name:<br><input type="text" name="firstname"><br><input type="submit" value="Submit"><br>Last name: <input type="text" name="lastname" form="form1"><br></form>
+
+
+<h2 id="formaction-属性"><a href="#formaction-属性" class="headerlink" title="formaction 属性"></a>formaction 属性</h2><p><code>formaction</code>属性规定当提交表单时处理该输入控件的文件的 URL。<code>formaction</code>属性覆盖<code>&lt;form&gt;</code>元素的<code>action</code>属性。<br><code>formaction</code>属性适用于 type=”submit” 以及 type=”image”。  </p>
+<h3 id="实例-39"><a href="#实例-39" class="headerlink" title="实例"></a>实例</h3><p>拥有两个两个提交按钮并对于不同动作的 HTML 表单。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"action_page.php"</span>&gt;</span></span><br><span class="line">First name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"firstname"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">Last name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"lastname"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"Submit"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">formaction</span>=<span class="string">"demo_admin.asp"</span> <span class="attr">value</span>=<span class="string">"Submit as admin"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>上述代码在浏览器中的显示如下：  </p>
+<form action="action_page.php"><br>First name:<br><input type="text" name="firstname"><br>Last name:<br><input type="text" name="lastname"><br><input type="submit" value="Submit"><br><input type="submit" formaction="demo_admin.asp" value="Submit as admin"><br></form>
+
+<h2 id="formenctype-属性"><a href="#formenctype-属性" class="headerlink" title="formenctype 属性"></a>formenctype 属性</h2><p><code>formenctype</code>属性规定当把表单数据提交至服务器时如何对其进行编码(仅针对 method=”post” 的表单)。<br><code>formenctype</code>属性覆盖<code>&lt;form&gt;</code>元素的<code>enctype</code>属性。<code>formenctype</code>属性适用于 type=”submit”以及 type=”image”。  </p>
+<h3 id="实例-40"><a href="#实例-40" class="headerlink" title="实例"></a>实例</h3><p>发送默认编码以及编码为”multipart/form-data”(第二个提交按钮)的表单数据(form-data)。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"demo_post_enctype.asp"</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></span><br><span class="line">First name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"firstname"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"Submit"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">formenctype</span>=<span class="string">"multipart/form-data"</span> <span class="attr">value</span>=<span class="string">"Submit as Multipart/form-data"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>上述代码在浏览器中的显示如下：  </p>
+<form action="demo_post_enctype.asp" method="post"><br>First name:<br><input type="text" name="firstname"><br><input type="submit" value="Submit"><br><input type="submit" formenctype="multipart/form-data" value="Submit as Multipart/form-data"><br></form>
+
+<h2 id="formmethod-属性"><a href="#formmethod-属性" class="headerlink" title="formmethod 属性"></a>formmethod 属性</h2><p><code>formmethod</code>属性定义用以向<code>action URL</code>发送表单数据的 HTTP 方法。<br><code>formmethod</code>属性覆盖<code>&lt;form&gt;</code>元素的<code>method</code>属性。<code>formmethod</code>属性适用于 type=”submit”以及 type=”image”。  </p>
+<h3 id="实例-41"><a href="#实例-41" class="headerlink" title="实例"></a>实例</h3><p>第二个提交按钮覆盖表单的 HTTP 方法。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"action_page.php"</span> <span class="attr">method</span>=<span class="string">"get"</span>&gt;</span></span><br><span class="line">First name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"firstname"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">Last name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"lastname"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"Submit"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">formmethod</span>=<span class="string">"post"</span> <span class="attr">formaction</span>=<span class="string">"demo_post.asp"</span> <span class="attr">value</span>=<span class="string">"Submit using POST"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>上述代码在浏览器中的显示如下：  </p>
+<form action="action_page.php" method="get"><br>First name:<br><input type="text" name="firstname"><br>Last name:<br><input type="text" name="lastname"><br><input type="submit" value="Submit"><br><input type="submit" formmethod="post" formaction="demo_post.asp" value="Submit using POST"><br></form>
+
+<h2 id="formnovalidate-属性"><a href="#formnovalidate-属性" class="headerlink" title="formnovalidate 属性"></a>formnovalidate 属性</h2><p><code>novalidate</code>属性是布尔属性。如果设置，则规定在提交表单时不对<code>&lt;input&gt;</code>元素进行验证。<br><code>formnovalidate</code>属性覆盖<code>&lt;form&gt;</code>元素的<code>novalidate</code>属性。<code>formnovalidate</code>属性可用于 type=”submit”。  </p>
+<h3 id="实例-42"><a href="#实例-42" class="headerlink" title="实例"></a>实例</h3><p>拥有两个提交按钮的表单(验证和不验证)。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"action_page.php"</span>&gt;</span></span><br><span class="line">E-mail:<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"email"</span> <span class="attr">name</span>=<span class="string">"userid"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"Submit"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">formnovalidate</span>=<span class="string">"formnovalidate"</span> <span class="attr">value</span>=<span class="string">"Submit without validation"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>上述代码在浏览器中的显示如下：  </p>
+<form action="action_page.php"><br>E-mail:<br><input type="email" name="userid"><br><input type="submit" value="Submit"><br><input type="submit" formnovalidate="formnovalidate" value="Submit without validation"><br></form>
+
+<h2 id="formtarget-属性"><a href="#formtarget-属性" class="headerlink" title="formtarget 属性"></a>formtarget 属性</h2><p><code>formtarget</code>属性规定的名称或关键词指示提交表单后在何处显示接收到的响应。<br><code>formtarget</code>属性会覆盖<code>&lt;form&gt;</code>元素的<code>target</code>属性。<code>formtarget</code>属性可与 type=”submit”和 type=”image”使用。  </p>
+<h3 id="实例-43"><a href="#实例-43" class="headerlink" title="实例"></a>实例</h3><p>这个表单有两个提交按钮，对应不同的目标窗口。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"action_page.php"</span>&gt;</span></span><br><span class="line">First name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"firstname"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">Last name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"lastname"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"Submit as normal"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">formtarget</span>=<span class="string">"_blank"</span> <span class="attr">value</span>=<span class="string">"Submit to a new window"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>上述代码在浏览器中的显示如下：  </p>
+<form action="action_page.php"><br>First name:<br><input type="text" name="firstname"><br>Last name:<br><input type="text" name="lastname"><br><input type="submit" value="Submit as normal"><br><input type="submit" formtarget="_blank" value="Submit to a new window"><br></form>
+
+<h2 id="height-和-width-属性"><a href="#height-和-width-属性" class="headerlink" title="height 和 width 属性"></a>height 和 width 属性</h2><p><code>height</code>和<code>width</code>属性规定<code>&lt;input&gt;</code>元素的高度和宽度。<code>height</code>和<code>width</code>属性仅用于<code>&lt;input type=&quot;image&quot;&gt;</code>。<br><strong>ps</strong>: 请始终规定图像的尺寸。如果浏览器不清楚图像尺寸，则页面会在图像加载时闪烁。  </p>
+<h3 id="实例-44"><a href="#实例-44" class="headerlink" title="实例"></a>实例</h3><p>把图像定义为提交按钮，并设置<code>height</code>和<code>width</code>属性。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"image"</span> <span class="attr">src</span>=<span class="string">"1.png"</span> <span class="attr">alt</span>=<span class="string">"Submit"</span> <span class="attr">width</span>=<span class="string">"128"</span> <span class="attr">height</span>=<span class="string">"128"</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>上述代码在浏览器中的显示如下：  </p>
+<input type="image" src="1.png" alt="Submit" width="128" height="128">
+
+<h2 id="list-属性"><a href="#list-属性" class="headerlink" title="list 属性"></a>list 属性</h2><p><code>list</code>属性引用的<code>&lt;datalist&gt;</code>元素中包含了<code>&lt;input&gt;</code>元素的预定义选项。  </p>
+<h3 id="实例-45"><a href="#实例-45" class="headerlink" title="实例"></a>实例</h3><p>使用<code>&lt;datalist&gt;</code>设置预定义值的<code>&lt;input&gt;</code>元素。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">list</span>=<span class="string">"browsers"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">datalist</span> <span class="attr">id</span>=<span class="string">"browsers"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Internet Explorer"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Firefox"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Chrome"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Opera"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Safari"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">datalist</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>上述代码在浏览器中的显示如下：  </p>
+<p><input list="browsers"></p>
+<datalist id="browsers"><br>    <option value="Internet Explorer"><br>    </option><option value="Firefox"><br>    </option><option value="Chrome"><br>    </option><option value="Opera"><br>    </option><option value="Safari"><br></option></datalist>
+
+<h2 id="min-和-max-属性"><a href="#min-和-max-属性" class="headerlink" title="min 和 max 属性"></a>min 和 max 属性</h2><p><code>min</code>和<code>max</code>属性规定<code>&lt;input&gt;</code>元素的最小值和最大值。  </p>
+<h3 id="实例-46"><a href="#实例-46" class="headerlink" title="实例"></a>实例</h3><p>具有最小和最大值的<code>&lt;input&gt;</code>元素。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Enter a date before 1980-01-01:</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"date"</span> <span class="attr">name</span>=<span class="string">"bday"</span> <span class="attr">max</span>=<span class="string">"1979-12-31"</span>&gt;</span></span><br><span class="line"> Enter a date after 2000-01-01:</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"date"</span> <span class="attr">name</span>=<span class="string">"bday"</span> <span class="attr">min</span>=<span class="string">"2000-01-02"</span>&gt;</span></span><br><span class="line"> Quantity (between 1 and 5):</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"number"</span> <span class="attr">name</span>=<span class="string">"quantity"</span> <span class="attr">min</span>=<span class="string">"1"</span> <span class="attr">max</span>=<span class="string">"5"</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>上述代码在浏览器中的显示如下：<br>Enter a date before 1980-01-01:</p>
+<p><input type="date" name="bday" max="1979-12-31"><br> Enter a date after 2000-01-01:</p>
+<p><input type="date" name="bday" min="2000-01-02"><br> Quantity (between 1 and 5):</p>
+<input type="number" name="quantity" min="1" max="5">
+
+<h2 id="multiple-属性"><a href="#multiple-属性" class="headerlink" title="multiple 属性"></a>multiple 属性</h2><p><code>multiple</code>属性是布尔属性。如果设置，则规定允许用户在<code>&lt;input&gt;</code>元素中输入一个以上的值。<code>multiple</code>属性适用于以下输入类型：email 和 file。  </p>
+<h3 id="实例-47"><a href="#实例-47" class="headerlink" title="实例"></a>实例</h3><p>接受多个值的文件上传字段。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Select iamges:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">name</span>=<span class="string">"img"</span> <span class="attr">multiple</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>上述代码在浏览器中的显示如下：<br>Select iamges:<input type="file" name="img" multiple></p>
+<h2 id="pattern-属性"><a href="#pattern-属性" class="headerlink" title="pattern 属性"></a>pattern 属性</h2><p><code>pattern</code>属性规定用于检查<code>&lt;input&gt;</code>元素值的正则表达式。</p>
+<h3 id="实例-48"><a href="#实例-48" class="headerlink" title="实例"></a>实例</h3><p>只能包含三个字母的输入字段(无数字或特殊字符)。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Country code:</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"country_code"</span> <span class="attr">pattern</span>=<span class="string">"[A-Za-z]&#123;3&#125;"</span> <span class="attr">title</span>=<span class="string">"Three letter country code"</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>上述代码在浏览器中的显示如下：<br>Country code:</p>
+<input type="text" name="country_code" pattern="[A-Za-z]{3}" title="Three letter country code">
+
+<h2 id="placeholder-属性"><a href="#placeholder-属性" class="headerlink" title="placeholder 属性"></a>placeholder 属性</h2><p><code>placeholder</code>属性规定用以描述输入字段预期值的提示(样本值或有关格式的简短描述)。该提示会在用户输入值之前显示在输入字段中。  </p>
+<h3 id="实例-49"><a href="#实例-49" class="headerlink" title="实例"></a>实例</h3><p>拥有占位符文本的输入字段。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"firstname"</span> <span class="attr">placeholder</span>=<span class="string">"First name"</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>上述代码在浏览器中的显示如下：  </p>
+<input type="text" name="firstname" placeholder="First name">
+
+<h2 id="required-属性"><a href="#required-属性" class="headerlink" title="required 属性"></a>required 属性</h2><p><code>required</code>属性是布尔属性。如果设置，则规定在提交表单之前必需填写输入字段。  </p>
+<h3 id="实例-50"><a href="#实例-50" class="headerlink" title="实例"></a>实例</h3><p>必填的输入字段。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Username: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">required</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>上述代码在浏览器中的显示如下：<br>Username: <input type="text" name="username" required></p>
+<h2 id="step-属性"><a href="#step-属性" class="headerlink" title="step 属性"></a>step 属性</h2><p><code>step</code>属性规定<code>&lt;input&gt;</code>元素的合法数字间隔。<br><strong>ps</strong>: <code>step</code>属性可与<code>max</code>以及<code>min</code>属性一同使用，来创建合法值的范围。  </p>
+<h3 id="实例-51"><a href="#实例-51" class="headerlink" title="实例"></a>实例</h3><p>拥有具体的合法数字间隔的输入字段。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"number"</span> <span class="attr">name</span>=<span class="string">"points"</span> <span class="attr">step</span>=<span class="string">"3"</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>上述代码在浏览器中的显示如下：  </p>
+<input type="number" name="points" step="3">
+
+<p><strong>To Be Continued…</strong></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/HTML/" rel="tag"># HTML</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/12/HTML学习(五)/" rel="next" title="HTML学习(五)">
+                <i class="fa fa-chevron-left"></i> HTML学习(五)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="Inory" />
+            
+              <p class="site-author-name" itemprop="name">Inory</p>
+              <p class="site-description motion-element" itemprop="description">刻んだ時だよ さあいくよ 歩き出す 坂の道を</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Inory50831" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/u/5693526330?refer_flag=1005055010_" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-[object Object]"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.cnblogs.com/mxwbq/" title="舞动数字" target="_blank">舞动数字</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://youngxhui.github.io/" title="ISLAND" target="_blank">ISLAND</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.csdn.net/p_monkey_lh/" title="P_Monkey_lh" target="_blank">P_Monkey_lh</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML-表单"><span class="nav-number">1.</span> <span class="nav-text">HTML 表单</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-form-gt-元素"><span class="nav-number">1.1.</span> <span class="nav-text">&lt;form&gt;元素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例"><span class="nav-number">1.1.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-input-gt-元素"><span class="nav-number">1.2.</span> <span class="nav-text">&lt;input&gt;元素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文本输入"><span class="nav-number">1.2.1.</span> <span class="nav-text">文本输入</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#实例-1"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单选按钮输入"><span class="nav-number">1.2.2.</span> <span class="nav-text">单选按钮输入</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#实例-2"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提交按钮"><span class="nav-number">1.2.3.</span> <span class="nav-text">提交按钮</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#实例-3"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">实例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Action-属性"><span class="nav-number">1.3.</span> <span class="nav-text">Action 属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Method-属性"><span class="nav-number">1.4.</span> <span class="nav-text">Method 属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Name-属性"><span class="nav-number">1.5.</span> <span class="nav-text">Name 属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-4"><span class="nav-number">1.5.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Form-属性"><span class="nav-number">1.6.</span> <span class="nav-text">Form 属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用-lt-fieldset-gt-组合表单数据"><span class="nav-number">1.7.</span> <span class="nav-text">用&lt;fieldset&gt;组合表单数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-5"><span class="nav-number">1.7.1.</span> <span class="nav-text">实例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML-表单元素"><span class="nav-number">2.</span> <span class="nav-text">HTML 表单元素</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-input-gt-元素-1"><span class="nav-number">2.1.</span> <span class="nav-text">&lt;input&gt; 元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-select-gt-元素"><span class="nav-number">2.2.</span> <span class="nav-text">&lt;select&gt; 元素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-6"><span class="nav-number">2.2.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-textarea-gt-元素"><span class="nav-number">2.3.</span> <span class="nav-text">&lt;textarea&gt; 元素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-7"><span class="nav-number">2.3.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-button-gt-元素"><span class="nav-number">2.4.</span> <span class="nav-text">&lt;button&gt; 元素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-8"><span class="nav-number">2.4.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5-表单元素"><span class="nav-number">2.5.</span> <span class="nav-text">HTML5 表单元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5-lt-datalist-gt-元素"><span class="nav-number">2.6.</span> <span class="nav-text">HTML5 &lt;datalist&gt; 元素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-9"><span class="nav-number">2.6.1.</span> <span class="nav-text">实例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML-输入类型"><span class="nav-number">3.</span> <span class="nav-text">HTML 输入类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#text-类型"><span class="nav-number">3.1.</span> <span class="nav-text">text 类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-10"><span class="nav-number">3.1.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#password-类型"><span class="nav-number">3.2.</span> <span class="nav-text">password 类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-11"><span class="nav-number">3.2.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#submit-类型"><span class="nav-number">3.3.</span> <span class="nav-text">submit 类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-12"><span class="nav-number">3.3.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#radio-类型"><span class="nav-number">3.4.</span> <span class="nav-text">radio 类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-13"><span class="nav-number">3.4.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#checkbox-类型"><span class="nav-number">3.5.</span> <span class="nav-text">checkbox 类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-14"><span class="nav-number">3.5.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#button-类型"><span class="nav-number">3.6.</span> <span class="nav-text">button 类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-15"><span class="nav-number">3.6.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5-输入类型"><span class="nav-number">3.7.</span> <span class="nav-text">HTML5 输入类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#number-类型"><span class="nav-number">3.8.</span> <span class="nav-text">number 类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-16"><span class="nav-number">3.8.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#date-类型"><span class="nav-number">3.9.</span> <span class="nav-text">date 类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-17"><span class="nav-number">3.9.1.</span> <span class="nav-text">实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-18"><span class="nav-number">3.9.2.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#color-类型"><span class="nav-number">3.10.</span> <span class="nav-text">color 类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-19"><span class="nav-number">3.10.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#range-类型"><span class="nav-number">3.11.</span> <span class="nav-text">range 类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-20"><span class="nav-number">3.11.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#month-类型"><span class="nav-number">3.12.</span> <span class="nav-text">month 类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-21"><span class="nav-number">3.12.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#week-类型"><span class="nav-number">3.13.</span> <span class="nav-text">week 类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-22"><span class="nav-number">3.13.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#time-类型"><span class="nav-number">3.14.</span> <span class="nav-text">time 类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-23"><span class="nav-number">3.14.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#datetime-类型"><span class="nav-number">3.15.</span> <span class="nav-text">datetime 类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-24"><span class="nav-number">3.15.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#datetime-local-类型"><span class="nav-number">3.16.</span> <span class="nav-text">datetime-local 类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-25"><span class="nav-number">3.16.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#email-类型"><span class="nav-number">3.17.</span> <span class="nav-text">email 类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-26"><span class="nav-number">3.17.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#search-类型"><span class="nav-number">3.18.</span> <span class="nav-text">search 类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-27"><span class="nav-number">3.18.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tel-类型"><span class="nav-number">3.19.</span> <span class="nav-text">tel 类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-28"><span class="nav-number">3.19.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#url-类型"><span class="nav-number">3.20.</span> <span class="nav-text">url 类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-29"><span class="nav-number">3.20.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入限制"><span class="nav-number">3.21.</span> <span class="nav-text">输入限制</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML-输入属性"><span class="nav-number">4.</span> <span class="nav-text">HTML 输入属性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#value-属性"><span class="nav-number">4.1.</span> <span class="nav-text">value 属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-30"><span class="nav-number">4.1.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#readonly-属性"><span class="nav-number">4.2.</span> <span class="nav-text">readonly 属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-31"><span class="nav-number">4.2.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#disabled-属性"><span class="nav-number">4.3.</span> <span class="nav-text">disabled 属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-32"><span class="nav-number">4.3.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#size-属性"><span class="nav-number">4.4.</span> <span class="nav-text">size 属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-33"><span class="nav-number">4.4.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#maxlength-属性"><span class="nav-number">4.5.</span> <span class="nav-text">maxlength 属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-34"><span class="nav-number">4.5.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#autocomplete-属性"><span class="nav-number">4.6.</span> <span class="nav-text">autocomplete 属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-35"><span class="nav-number">4.6.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#novalidate-属性"><span class="nav-number">4.7.</span> <span class="nav-text">novalidate 属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-36"><span class="nav-number">4.7.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#autofocus-属性"><span class="nav-number">4.8.</span> <span class="nav-text">autofocus 属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-37"><span class="nav-number">4.8.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#form-属性"><span class="nav-number">4.9.</span> <span class="nav-text">form 属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-38"><span class="nav-number">4.9.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#formaction-属性"><span class="nav-number">4.10.</span> <span class="nav-text">formaction 属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-39"><span class="nav-number">4.10.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#formenctype-属性"><span class="nav-number">4.11.</span> <span class="nav-text">formenctype 属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-40"><span class="nav-number">4.11.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#formmethod-属性"><span class="nav-number">4.12.</span> <span class="nav-text">formmethod 属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-41"><span class="nav-number">4.12.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#formnovalidate-属性"><span class="nav-number">4.13.</span> <span class="nav-text">formnovalidate 属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-42"><span class="nav-number">4.13.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#formtarget-属性"><span class="nav-number">4.14.</span> <span class="nav-text">formtarget 属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-43"><span class="nav-number">4.14.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#height-和-width-属性"><span class="nav-number">4.15.</span> <span class="nav-text">height 和 width 属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-44"><span class="nav-number">4.15.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#list-属性"><span class="nav-number">4.16.</span> <span class="nav-text">list 属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-45"><span class="nav-number">4.16.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#min-和-max-属性"><span class="nav-number">4.17.</span> <span class="nav-text">min 和 max 属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-46"><span class="nav-number">4.17.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#multiple-属性"><span class="nav-number">4.18.</span> <span class="nav-text">multiple 属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-47"><span class="nav-number">4.18.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pattern-属性"><span class="nav-number">4.19.</span> <span class="nav-text">pattern 属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-48"><span class="nav-number">4.19.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#placeholder-属性"><span class="nav-number">4.20.</span> <span class="nav-text">placeholder 属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-49"><span class="nav-number">4.20.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#required-属性"><span class="nav-number">4.21.</span> <span class="nav-text">required 属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-50"><span class="nav-number">4.21.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#step-属性"><span class="nav-number">4.22.</span> <span class="nav-text">step 属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-51"><span class="nav-number">4.22.1.</span> <span class="nav-text">实例</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Inory</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">15.3k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/libe/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libe/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libe/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libe/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libe/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libe/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
