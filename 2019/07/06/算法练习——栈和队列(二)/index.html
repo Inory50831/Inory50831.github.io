@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/libe/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/libe/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Algorithm," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="用一个栈实现另一个栈的排序题目　　一个栈中元素的类型为整型，现在想将该栈从顶到底按从大到小的顺序排序，只许申请一个栈。除此之外，可以申请新的变量，但不能申请额外的数据结构，如何完成排序？ 思路　　将要排序的栈记为stack，申请的辅助栈记为help。在stack上执行pop操作，弹出的元素记为cur。    如果cur小于或等于help的栈顶元素，则将cur直接压入help   如果cur大于he">
+<meta name="keywords" content="Algorithm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法练习——栈和队列(二)">
+<meta property="og:url" content="https://inory50831.github.io/2019/07/06/算法练习——栈和队列(二)/index.html">
+<meta property="og:site_name" content="Iworld">
+<meta property="og:description" content="用一个栈实现另一个栈的排序题目　　一个栈中元素的类型为整型，现在想将该栈从顶到底按从大到小的顺序排序，只许申请一个栈。除此之外，可以申请新的变量，但不能申请额外的数据结构，如何完成排序？ 思路　　将要排序的栈记为stack，申请的辅助栈记为help。在stack上执行pop操作，弹出的元素记为cur。    如果cur小于或等于help的栈顶元素，则将cur直接压入help   如果cur大于he">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-08-21T06:22:18.863Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="算法练习——栈和队列(二)">
+<meta name="twitter:description" content="用一个栈实现另一个栈的排序题目　　一个栈中元素的类型为整型，现在想将该栈从顶到底按从大到小的顺序排序，只许申请一个栈。除此之外，可以申请新的变量，但不能申请额外的数据结构，如何完成排序？ 思路　　将要排序的栈记为stack，申请的辅助栈记为help。在stack上执行pop操作，弹出的元素记为cur。    如果cur小于或等于help的栈顶元素，则将cur直接压入help   如果cur大于he">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://inory50831.github.io/2019/07/06/算法练习——栈和队列(二)/"/>
+
+
+
+
+
+  <title>算法练习——栈和队列(二) | Iworld</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?15ceb2f5458a321f26b539fb1240ecaf";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Iworld</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">只会嘤嘤嘤的萌新(滑稽)</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://inory50831.github.io/2019/07/06/算法练习——栈和队列(二)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Inory">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Iworld">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">算法练习——栈和队列(二)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-06T13:32:59+08:00">
+                2019-07-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,265
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="用一个栈实现另一个栈的排序"><a href="#用一个栈实现另一个栈的排序" class="headerlink" title="用一个栈实现另一个栈的排序"></a>用一个栈实现另一个栈的排序</h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>　　一个栈中元素的类型为整型，现在想将该栈从顶到底按从大到小的顺序排序，只许申请一个栈。除此之外，可以申请新的变量，但不能申请额外的数据结构，如何完成排序？</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>　　将要排序的栈记为stack，申请的辅助栈记为help。在stack上执行pop操作，弹出的元素记为cur。  </p>
+<ul>
+<li>如果cur小于或等于help的栈顶元素，则将cur直接压入help  </li>
+<li>如果cur大于help的栈顶元素，则将help的元素逐一弹出，逐一压入stack，直到cur小于或等于help的栈顶元素，再将cur压入help</li>
+</ul>
+<p>　　重复上述过程，直到stack中的元素全部压入到help，最后将help的所有元素逐一压入stack，完成排序。</p>
+<a id="more"></a>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Stack;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Stack;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Stack_SortStackByStack</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">SortStackByStack</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sortStackByStack</span><span class="params">(Stack&lt;Integer&gt; stack)</span> </span>&#123;</span><br><span class="line">            Stack&lt;Integer&gt; help = <span class="keyword">new</span> Stack&lt;Integer&gt;();</span><br><span class="line">            <span class="keyword">while</span> (!stack.isEmpty()) &#123;</span><br><span class="line">                <span class="keyword">int</span> cur = stack.pop();</span><br><span class="line">                <span class="keyword">while</span> (!help.isEmpty() &amp;&amp; help.peek() &lt; cur) &#123;</span><br><span class="line">                    stack.push(help.pop());</span><br><span class="line">                &#125;</span><br><span class="line">                help.push(cur);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">while</span> (!help.isEmpty()) &#123;</span><br><span class="line">                stack.push(help.pop());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">            Stack&lt;Integer&gt; stack = <span class="keyword">new</span> Stack&lt;Integer&gt;();</span><br><span class="line">            stack.push(<span class="number">5</span>);</span><br><span class="line">            stack.push(<span class="number">1</span>);</span><br><span class="line">            stack.push(<span class="number">23</span>);</span><br><span class="line">            stack.push(<span class="number">6</span>);</span><br><span class="line">            stack.push(<span class="number">3424</span>);</span><br><span class="line">            System.out.println(stack);</span><br><span class="line">            sortStackByStack(stack);</span><br><span class="line">            System.out.println(stack);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="用栈来求解汉诺塔问题"><a href="#用栈来求解汉诺塔问题" class="headerlink" title="用栈来求解汉诺塔问题"></a>用栈来求解汉诺塔问题</h2><h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><p>　　汉诺他问题比较经典，这里修改一下游戏规则：现在限制不能从最左侧的塔直接移动到最右侧，也不能从最右侧直接移动到最左侧，而是必须经过中间。求当塔有N层的时候，打印最优移动过程和最优移动总步数。</p>
+<h3 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h3><p>　　用以下两种方法解决：  </p>
+<p>　　　　方法一：递归的方法  </p>
+<p>　　　　方法二：非递归的方法，用栈来模拟汉诺塔的三个塔  </p>
+<h3 id="思路-一"><a href="#思路-一" class="headerlink" title="思路(一)"></a>思路(一)</h3><p>方法一：递归</p>
+<p>首先，如果只剩最上层的塔需要移动，则有如下处理：  </p>
+<ol>
+<li>如果希望从“左”移动到“中”，打印：“Move 1 from left to mid”。</li>
+<li>如果希望从“中”移动到“左”，打印：“Move 1 from mid to left”。</li>
+<li>如果希望从“右”移动到“中”，打印：“Move 1 from right to mid”。</li>
+<li>如果希望从“中”移动到“右”，打印：“Move 1 from mid to right”。</li>
+<li>如果希望从“左”移动到“右”，打印：“Move 1 from left to mid”和“Move 1 from mid to right”。</li>
+<li>如果希望从“右”移动到“左”，打印：“Move 1 from right to mid”和“Move 1 from mid to left”。</li>
+</ol>
+<p>以上过程就是递归的终止条件，也就是只剩上层塔时的打印过程。  </p>
+<p>接下来，我们分析剩下多层塔的情况。  </p>
+<p>如果剩下N层塔，从最上到最下依次为1~N，则有如下判断：  </p>
+<ol>
+<li><p>如果剩下的N层塔都在“左”，希望全部移动到“中”，则有三个步骤：  </p>
+<p>1). 将1~N-1层塔全部从“左”移动到“右”，交给递归来搞定。  </p>
+<p>2).将第N层塔从“左”移动到“中”。  </p>
+<p>3).再将1~N-1层塔全部从“右”移动到“中”，交给递归搞定。  </p>
+</li>
+<li><p>如果把剩下的N层塔从“中”移动到“左”，从“中”移动到“右”，从“右”移动到“中”，过程与情况1同理，一样分解为3步。</p>
+</li>
+<li><p>如果剩下的N层塔都在“左”，希望全部移动到“右”，则有五个步骤：  </p>
+<p>1). 将1~N-1层塔先全部从“左”移动到“右”，交给递归搞定。  </p>
+<p>2). 将第N层塔从“左”移动到“中”。  </p>
+<p>3). 将1~N-1层塔全部从“右”移动到“左”，交给递归搞定。</p>
+<p>4). 将第N层塔从“中”移动到“右”。</p>
+<p>5). 将1~N-1层塔全部从“左”移动到“右”，交给递归搞定。</p>
+</li>
+<li><p>如果把剩下的N层塔从“右”移动到“左”，过程情况与情况3同理，一样分解为4步。</p>
+</li>
+</ol>
+<h3 id="代码-一"><a href="#代码-一" class="headerlink" title="代码(一)"></a>代码(一)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Stack;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Stack;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Stack_HannoiStack</span> </span>&#123;</span><br><span class="line">    <span class="comment">/* 递归方法 */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">HannoiStack1</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hannoiProblem1</span><span class="params">(<span class="keyword">int</span> num, String left, String mid, String right)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (num &lt; <span class="number">1</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> process(num, left, mid, right, left, right);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">process</span><span class="params">(<span class="keyword">int</span> num, String left, String mid, String right, String from, String to)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (num == <span class="number">1</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (from.equals(mid) || to.equals(mid)) &#123;</span><br><span class="line">                    System.out.println(<span class="string">"Move 1 from "</span> + from + <span class="string">" to "</span> + to);</span><br><span class="line">                    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    System.out.println(<span class="string">"Move 1 from "</span> + from + <span class="string">" to "</span> + mid);</span><br><span class="line">                    System.out.println(<span class="string">"Move 1 from "</span> + mid + <span class="string">" to "</span> + to);</span><br><span class="line">                    <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (from.equals(mid) || to.equals(mid)) &#123;</span><br><span class="line">                String another = (from.equals(left) || to.equals(left)) ? right : left;</span><br><span class="line">                <span class="keyword">int</span> part1 = process(num - <span class="number">1</span>, left, mid, right, from, another);</span><br><span class="line">                <span class="keyword">int</span> part2 = <span class="number">1</span>;</span><br><span class="line">                System.out.println(<span class="string">"Move "</span> + num + <span class="string">" from "</span> + from + <span class="string">" to "</span> + to);</span><br><span class="line">                <span class="keyword">int</span> part3 = process(num - <span class="number">1</span>, left, mid, right, another, to);</span><br><span class="line">                <span class="keyword">return</span> part1 + part2 + part3;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">int</span> part1 = process(num - <span class="number">1</span>, left, mid, right, from, to);</span><br><span class="line">                <span class="keyword">int</span> part2 = <span class="number">1</span>;</span><br><span class="line">                System.out.println(<span class="string">"Move "</span> + num + <span class="string">" from "</span> + from + <span class="string">" to "</span> + mid);</span><br><span class="line">                <span class="keyword">int</span> part3 = process(num - <span class="number">1</span>, left, mid, right, to ,from);</span><br><span class="line">                <span class="keyword">int</span> part4 = <span class="number">1</span>;</span><br><span class="line">                System.out.println(<span class="string">"Move "</span> + num + <span class="string">" from "</span> + mid + <span class="string">" to "</span> + to);</span><br><span class="line">                <span class="keyword">int</span> part5 = process(num - <span class="number">1</span>, left, mid, right, from, to);</span><br><span class="line">                <span class="keyword">return</span> part1 + part2 + part3 + part4 + part5;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">            HannoiStack1 hannoi = <span class="keyword">new</span> HannoiStack1();</span><br><span class="line">            <span class="keyword">int</span> step = hannoi.hannoiProblem1(<span class="number">3</span>, <span class="string">"left"</span>, <span class="string">"mid"</span>, <span class="string">"right"</span>);</span><br><span class="line">            System.out.println(step);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">｝</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Algorithm/" rel="tag">📌 Algorithm</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/04/算法练习——栈和队列/" rel="next" title="算法练习——栈和队列">
+                <i class="fa fa-chevron-left"></i> 算法练习——栈和队列
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/14/Floyd算法/" rel="prev" title="Floyd 算法">
+                Floyd 算法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div id="gitalk-container">
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="Inory" />
+            
+              <p class="site-author-name" itemprop="name">Inory</p>
+              <p class="site-description motion-element" itemprop="description">刻んだ時だよ さあいくよ 歩き出す 坂の道を</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Inory50831" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/u/5693526330?refer_flag=1005055010_" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-[object Object]"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.cnblogs.com/mxwbq/" title="舞动数字" target="_blank">舞动数字</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://youngxhui.top/" title="ISLAND" target="_blank">ISLAND</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.csdn.net/p_monkey_lh/" title="P_Monkey_lh" target="_blank">P_Monkey_lh</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://me.csdn.net/qq_39384379" title="小哈Wink" target="_blank">小哈Wink</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#用一个栈实现另一个栈的排序"><span class="nav-number">1.</span> <span class="nav-text">用一个栈实现另一个栈的排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目"><span class="nav-number">1.1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路"><span class="nav-number">1.2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">1.3.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用栈来求解汉诺塔问题"><span class="nav-number">2.</span> <span class="nav-text">用栈来求解汉诺塔问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目-1"><span class="nav-number">2.1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#要求"><span class="nav-number">2.2.</span> <span class="nav-text">要求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路-一"><span class="nav-number">2.3.</span> <span class="nav-text">思路(一)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码-一"><span class="nav-number">2.4.</span> <span class="nav-text">代码(一)</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Inory</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">全站字数&#58;</span>
+    
+    <span title="全站字数">22.2k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/libe/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libe/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libe/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libe/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libe/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/libe/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '76402aa6623a6b3d44a3',
+          clientSecret: 'ef11c47f7d70d69cadff36c3d7745f11a735e144',
+          repo: 'Inory50831.github.io',
+          owner: 'Inory50831',
+          admin: ['Inory50831'],
+          id: location.pathname,
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')           
+       </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
